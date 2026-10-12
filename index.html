@@ -1,0 +1,282 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#171326">
+<title>LivroMágico — Biblioteca de histórias</title>
+<style>
+:root{--bg:#100e19;--panel:#1b1828;--panel2:#252137;--text:#f8f5ff;--muted:#b7b0ca;--purple:#a78bfa;--pink:#f0abfc;--gold:#f7d794;--line:#39334e;--green:#86efac;--red:#fca5a5}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at 15% 0%,#30204a 0,transparent 42%),var(--bg);color:var(--text);font:15px/1.5 system-ui,-apple-system,Segoe UI,sans-serif}button,input,textarea,select{font:inherit}button{cursor:pointer;border:0;border-radius:12px;padding:11px 15px;font-weight:700;background:linear-gradient(120deg,var(--purple),var(--pink));color:#21172d}button.secondary{background:var(--panel2);color:var(--text);border:1px solid var(--line)}button.danger{background:#4a202c;color:#ffe4e6;border:1px solid #793342}button:disabled{opacity:.45;cursor:not-allowed}input,textarea,select{width:100%;background:#12101d;color:var(--text);border:1px solid var(--line);border-radius:10px;padding:11px;outline:none}textarea{resize:vertical;min-height:100px}label{display:block;font-size:13px;color:var(--muted);margin:12px 0 6px}.hidden{display:none!important}.muted{color:var(--muted)}.tiny{font-size:12px}.top{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:16px clamp(16px,4vw,52px);border-bottom:1px solid #ffffff12;position:sticky;top:0;background:#100e19eF;backdrop-filter:blur(14px);z-index:5}.brand{font-weight:900;font-size:21px;letter-spacing:-.5px}.brand span{color:var(--pink)}.layout{display:grid;grid-template-columns:230px 1fr;max-width:1440px;margin:auto;min-height:calc(100vh - 68px)}aside{padding:22px 14px;border-right:1px solid #ffffff12}nav{display:grid;gap:7px}nav button{background:transparent;color:var(--muted);text-align:left;font-weight:600}nav button.active,nav button:hover{background:var(--panel2);color:white}.side-note{margin-top:24px;padding:14px;background:var(--panel);border:1px solid var(--line);border-radius:14px}.content{padding:clamp(18px,4vw,42px);min-width:0}.hero{padding:28px;border-radius:22px;background:linear-gradient(120deg,#382455,#241a38 55%,#292044);border:1px solid #ffffff20;margin-bottom:25px}.hero h1{font-size:clamp(28px,4vw,44px);line-height:1.1;margin:6px 0 12px;letter-spacing:-1.2px}.eyebrow{color:var(--gold);font-weight:800;text-transform:uppercase;font-size:11px;letter-spacing:1.6px}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(205px,1fr));gap:16px}.panel{background:#1b1828eF;border:1px solid var(--line);border-radius:17px;padding:18px}.section-head{display:flex;align-items:center;justify-content:space-between;gap:12px;margin:28px 0 14px}.section-head h2{margin:0;font-size:22px}.book{overflow:hidden;padding:0}.cover{height:190px;display:flex;align-items:end;padding:15px;background:linear-gradient(145deg,#6d28d9,#db2777);position:relative;isolation:isolate}.cover:before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 70% 25%,#fff8,transparent 20%),radial-gradient(circle at 30% 70%,#facc1580,transparent 25%);z-index:-1}.cover.c2{background:linear-gradient(145deg,#0f766e,#164e63)}.cover.c3{background:linear-gradient(145deg,#9a3412,#451a03)}.cover.c4{background:linear-gradient(145deg,#1d4ed8,#312e81)}.cover h3{font:800 23px/1.1 Georgia,serif;text-shadow:0 2px 8px #0008;margin:0}.book-info{padding:14px}.book-info p{margin:4px 0 12px;color:var(--muted);font-size:13px}.row{display:flex;gap:10px;align-items:center;flex-wrap:wrap}.row>*{flex:1}.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.stat strong{font-size:27px;display:block}.formgrid{display:grid;grid-template-columns:1fr 1fr;gap:0 14px}.formgrid .full{grid-column:1/-1}.notice{border:1px solid #6b5a32;background:#302819;color:#fce7b2;padding:12px;border-radius:12px;font-size:13px;margin:12px 0}.good{color:var(--green)}.reader{max-width:760px;margin:auto;background:#f7f0df;color:#292333;border-radius:8px;padding:clamp(22px,6vw,60px);font:18px/1.9 Georgia,serif;box-shadow:0 15px 60px #0005}.reader h2{text-align:center;line-height:1.25}.reader p{text-indent:1.5em}.reader-controls{display:flex;justify-content:space-between;align-items:center;gap:10px;margin:16px 0}.auth-wrap{min-height:100vh;display:grid;place-items:center;padding:20px}.auth{width:min(100%,440px);padding:28px}.auth h1{margin:0 0 5px}.tabrow{display:flex;gap:8px;margin:18px 0}.tabrow button{flex:1}.pill{display:inline-block;padding:4px 9px;border-radius:99px;background:#332b49;color:#e9ddff;font-size:12px}.admin-table{width:100%;border-collapse:collapse}.admin-table td,.admin-table th{padding:10px;text-align:left;border-bottom:1px solid var(--line);font-size:13px}.admin-table th{color:var(--muted)}.mobile-nav{display:none}
+@media(max-width:760px){.layout{display:block}aside{display:none}.mobile-nav{display:flex;gap:5px;overflow:auto;padding:8px 12px;border-bottom:1px solid #ffffff12}.mobile-nav button{white-space:nowrap;padding:9px 11px}.content{padding:18px 14px}.top{padding:13px 15px}.stats{grid-template-columns:1fr 1fr}.formgrid{grid-template-columns:1fr}.formgrid .full{grid-column:auto}.hero{padding:22px}.section-head{align-items:flex-start;flex-direction:column}}
+</style>
+</head>
+<body>
+<div id="authView" class="auth-wrap">
+  <div class="auth panel">
+    <div class="brand">📚 Livro<span>Mágico</span></div>
+    <p class="muted">Sua próxima história começa aqui.</p>
+    <div id="firstAdminNotice" class="notice hidden">Primeiro acesso: crie sua conta. Ela será a conta administradora inicial deste protótipo neste navegador.</div>
+    <div class="tabrow"><button id="loginTab" class="secondary" onclick="setAuthMode('login')">Entrar</button><button id="signupTab" onclick="setAuthMode('signup')">Criar conta</button></div>
+    <form id="authForm">
+      <label>Nome</label><input id="authName" placeholder="Seu nome" autocomplete="name">
+      <label>E-mail</label><input id="authEmail" type="email" required placeholder="voce@email.com" autocomplete="email">
+      <label>Senha</label><input id="authPassword" type="password" required minlength="4" placeholder="Mínimo de 4 caracteres" autocomplete="current-password">
+      <button style="width:100%;margin-top:18px" id="authSubmit">Entrar</button>
+    </form>
+    <p id="authError" class="tiny" style="color:var(--red)"></p>
+    <p class="tiny muted">Demonstração local: contas e livros ficam somente neste navegador. Não use senhas reais.</p>
+  </div>
+</div>
+<div id="appView" class="hidden">
+  <header class="top"><div class="brand">📚 Livro<span>Mágico</span></div><div class="row" style="flex:initial"><span id="topCredits" class="pill">Créditos: 0</span><span id="topUser" class="muted tiny"></span><button class="secondary" onclick="logout()">Sair</button></div></header>
+  <div class="mobile-nav" id="mobileNav"></div>
+  <div class="layout">
+    <aside><nav id="sideNav"></nav><div class="side-note"><div class="eyebrow">Seu espaço</div><p class="tiny muted">Escreva, leia, salve e compartilhe suas histórias.</p><div id="sideCredits"></div></div></aside>
+    <main class="content">
+      <section id="page-home">
+        <div class="hero"><div class="eyebrow">Estúdio de histórias</div><h1>Transforme uma ideia<br>em um livro inteiro.</h1><p class="muted">Crie histórias, organize sua biblioteca e descubra livros de outros autores.</p><button onclick="go('create')">✦ Criar meu livro</button></div>
+        <div class="stats"><div class="panel stat"><span class="muted tiny">Meus livros</span><strong id="statMine">0</strong></div><div class="panel stat"><span class="muted tiny">Na biblioteca pública</span><strong id="statPublic">0</strong></div><div class="panel stat"><span class="muted tiny">Meus créditos</span><strong id="statCredits">0</strong></div></div>
+        <div class="section-head"><h2>Livros em destaque</h2><button class="secondary" onclick="go('discover')">Ver todos</button></div><div class="grid" id="featuredGrid"></div>
+      </section>
+      <section id="page-create" class="hidden">
+        <div class="section-head"><h2>✦ Criar um livro</h2><span class="pill">15–20 capítulos</span></div>
+        <div class="notice">IA local no navegador: sem API key e sem cobrança por requisição. O primeiro carregamento baixa um modelo grande e exige internet; depois, o navegador pode reutilizar os arquivos em cache. É necessário navegador com WebGPU e memória suficiente. A meta de 100–200 páginas em 30 minutos ainda precisa ser medida no aparelho.</div>
+        <div class="panel" style="margin-bottom:14px">
+          <strong>Motor de IA local</strong>
+          <p class="muted tiny">Modelo inicial leve para teste. O tamanho e a compatibilidade dependem do dispositivo.</p>
+          <div class="row"><button id="loadAiBtn" type="button" onclick="loadLocalAI()">⬇ Carregar IA gratuita</button><span id="aiStatus" class="muted tiny">IA não carregada</span></div>
+          <progress id="aiProgress" value="0" max="100" style="width:100%;margin-top:12px;display:none"></progress>
+        </div>
+        <div class="panel">
+          <form id="bookForm">
+            <div class="formgrid">
+              <div><label>Título (opcional)</label><input id="bookTitle" placeholder="A IA pode sugerir um título"></div>
+              <div><label>Gênero</label><select id="bookGenre"><option>Fantasia</option><option>Romance</option><option>Ficção científica</option><option>Aventura</option><option>Suspense</option><option>Terror</option><option>Drama</option><option>LitRPG / Sistema</option><option>Infantojuvenil</option></select></div>
+              <div><label>Quantidade de capítulos</label><select id="bookChapters"><option value="15">15 capítulos</option><option value="16">16 capítulos</option><option value="17">17 capítulos</option><option value="18">18 capítulos</option><option value="19">19 capítulos</option><option value="20">20 capítulos</option></select></div>
+              <div><label>Meta de extensão</label><select id="bookLength"><option value="100">Cerca de 100 páginas</option><option value="150" selected>Cerca de 150 páginas</option><option value="200">Cerca de 200 páginas</option></select></div>
+              <div class="full"><label>Ideia ou sinopse do livro</label><textarea id="bookSynopsis" required placeholder="Conte quem é o protagonista, o mundo, o conflito e o que torna sua história especial..."></textarea></div>
+              <div class="full"><label>Estilo de escrita (opcional)</label><input id="bookStyle" placeholder="Ex.: emocionante, detalhado, com diálogos e reviravoltas"></div>
+            </div>
+            <button type="submit" style="margin-top:16px">Preparar livro</button>
+          </form>
+          <div id="generationPreview" class="hidden"></div>
+        </div>
+      </section>
+      <section id="page-library" class="hidden"><div class="section-head"><h2>Minha biblioteca</h2><button onclick="go('create')">+ Novo livro</button></div><div class="grid" id="myBooksGrid"></div></section>
+      <section id="page-discover" class="hidden"><div class="section-head"><h2>Descobrir livros</h2><span class="muted tiny">Leia obras publicadas pela comunidade</span></div><div class="grid" id="publicGrid"></div></section>
+      <section id="page-reader" class="hidden"><div class="reader-controls"><button class="secondary" onclick="go('library')">← Biblioteca</button><span id="readerPageLabel" class="muted tiny"></span><button class="secondary" onclick="downloadCurrentBook()">Baixar TXT</button></div><article id="reader" class="reader"></article><div class="reader-controls"><button class="secondary" onclick="readerPrev()">← Página anterior</button><span id="readerChapterLabel" class="muted tiny"></span><button onclick="readerNext()">Próxima página →</button></div><p class="tiny muted">Protótipo: leitor paginado por capítulo. A exportação PDF poderá usar a impressão do navegador na versão seguinte.</p></section>
+      <section id="page-admin" class="hidden"><div class="section-head"><h2>⚙ Painel de administrador</h2><span class="pill">Administrador</span></div>
+        <div class="notice">Este painel demonstra as funções. Segurança real exige autenticação e permissões no servidor; no protótipo, tudo fica no armazenamento deste navegador.</div>
+        <div class="stats"><div class="panel stat"><span class="muted tiny">Contas</span><strong id="adminUsers">0</strong></div><div class="panel stat"><span class="muted tiny">Livros</span><strong id="adminBooks">0</strong></div><div class="panel stat"><span class="muted tiny">Créditos concedidos</span><strong id="adminCredits">0</strong></div></div>
+        <div class="section-head"><h2>Configurações de geração</h2></div><div class="panel">
+          <label>Créditos iniciais para novas contas</label><input id="settingCredits" type="number" min="0" value="5">
+          <label>Custo para gerar um livro</label><input id="settingCost" type="number" min="0" value="1">
+          <label>Leitura de livros da comunidade (créditos por livro)</label><input id="settingReadCost" type="number" min="0" value="1">
+          <button onclick="saveSettings()">Salvar configurações</button>
+        </div>
+        <div class="section-head"><h2>Gerenciar contas</h2></div><div class="panel" style="overflow:auto"><table class="admin-table"><thead><tr><th>Conta</th><th>Função</th><th>Créditos</th><th>Ações</th></tr></thead><tbody id="usersTable"></tbody></table></div>
+        <div class="section-head"><h2>Gerenciar livros publicados</h2></div><div class="panel" style="overflow:auto"><table class="admin-table"><thead><tr><th>Livro</th><th>Autor</th><th>Visibilidade</th><th>Ação</th></tr></thead><tbody id="adminBooksTable"></tbody></table></div>
+      </section>
+      <section id="page-profile" class="hidden"><div class="section-head"><h2>Minha conta</h2></div><div class="panel"><p id="profileInfo"></p><label>Nome de exibição</label><input id="profileName"><button style="margin-top:12px" onclick="saveProfile()">Salvar perfil</button></div></section>
+    </main>
+  </div>
+</div>
+<script>
+const STORE='livromagico_demo_v1';
+let db={users:[],books:[],settings:{initialCredits:5,bookCost:1,readCost:1},adminCreated:false};
+let authMode='login',currentUser=null,readerBookId=null,readerIndex=0;
+const navItems=[['home','⌂ Início'],['create','✦ Criar livro'],['library','▤ Minha biblioteca'],['discover','◎ Descobrir'],['profile','◉ Minha conta']];
+function load(){try{const s=localStorage.getItem(STORE);if(s)db=JSON.parse(s)}catch(e){}}
+function save(){localStorage.setItem(STORE,JSON.stringify(db))}
+function esc(s=''){return String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
+function uid(){return Math.random().toString(36).slice(2,10)+Date.now().toString(36)}
+function user(){return db.users.find(u=>u.id===currentUser)}
+function setAuthMode(mode){authMode=mode;document.getElementById('loginTab').className=mode==='login'?'':'secondary';document.getElementById('signupTab').className=mode==='signup'?'':'secondary';document.getElementById('authName').parentElement.querySelector('label').style.display=mode==='signup'?'block':'none';document.getElementById('authName').style.display=mode==='signup'?'block':'none';document.getElementById('authSubmit').textContent=mode==='signup'?'Criar minha conta':'Entrar';document.getElementById('firstAdminNotice').classList.toggle('hidden',db.users.length>0||mode!=='signup');document.getElementById('authError').textContent=''}
+function authSubmit(e){e.preventDefault();const email=document.getElementById('authEmail').value.trim().toLowerCase(),password=document.getElementById('authPassword').value,name=document.getElementById('authName').value.trim()||email.split('@')[0];let existing=db.users.find(u=>u.email===email);if(authMode==='signup'){if(existing){err('Este e-mail já tem uma conta.');return}const isAdmin=db.users.length===0;const u={id:uid(),email,password,name,role:isAdmin?'admin':'user',credits:isAdmin?999999:db.settings.initialCredits,createdAt:new Date().toISOString(),disabled:false};db.users.push(u);db.adminCreated=true;save();currentUser=u.id;showApp();return}if(!existing||existing.password!==password){err('E-mail ou senha incorretos.');return}if(existing.disabled){err('Esta conta foi desativada pelo administrador.');return}currentUser=existing.id;showApp()}
+function err(t){document.getElementById('authError').textContent=t}
+document.getElementById('authForm').addEventListener('submit',authSubmit);
+function logout(){currentUser=null;document.getElementById('appView').classList.add('hidden');document.getElementById('authView').classList.remove('hidden');document.getElementById('authForm').reset();setAuthMode('login')}
+function showApp(){document.getElementById('authView').classList.add('hidden');document.getElementById('appView').classList.remove('hidden');renderNav();go('home')}
+function renderNav(){const make=(mobile)=>navItems.filter(([id])=>id!=='admin').map(([id,label])=>`<button onclick="go('${id}')">${label}</button>`).join('')+(user()?.role==='admin'?'<button onclick="openAdmin()">⚙ Administração</button>':'');document.getElementById('sideNav').innerHTML=make(false);document.getElementById('mobileNav').innerHTML=make(true)}
+function openAdmin(){go('admin')}
+function goCreate(){go('create')}
+function go(page){document.querySelectorAll('main.content>section').forEach(s=>s.classList.add('hidden'));const el=document.getElementById('page-'+page);if(el)el.classList.remove('hidden');document.querySelectorAll('#sideNav button,#mobileNav button').forEach(b=>b.classList.toggle('active',b.getAttribute('onclick')===`go('${page}')`));if(page==='home')renderHome();if(page==='library')renderLibrary();if(page==='discover')renderDiscover();if(page==='admin')renderAdmin();if(page==='profile')renderProfile();updateHeader();window.scrollTo(0,0)}
+function updateHeader(){const u=user();if(!u)return;document.getElementById('topCredits').textContent=u.role==='admin'?'Créditos ilimitados':'Créditos: '+u.credits;document.getElementById('topUser').textContent=u.name+(u.role==='admin'?' · Admin':'');document.getElementById('sideCredits').textContent=u.role==='admin'?'Créditos ilimitados':u.credits+' créditos disponíveis'}
+function coverClass(i){return ['','c2','c3','c4'][i%4]}
+function bookCard(b,i){return `<div class="panel book"><div class="cover ${coverClass(i)}"><h3>${esc(b.title)}</h3></div><div class="book-info"><strong>${esc(b.title)}</strong><p>${esc(b.genre)} · ${b.chapters?.length||b.chapterCount||15} capítulos<br>Por ${esc(b.authorName||'Autor')}</p><div class="row"><button onclick="openReader('${b.id}')">Ler</button><button class="secondary" onclick="bookAction('${b.id}')">Opções</button></div></div></div>`}
+function renderHome(){const mine=db.books.filter(b=>b.ownerId===currentUser),pub=db.books.filter(b=>b.published);document.getElementById('statMine').textContent=mine.length;document.getElementById('statPublic').textContent=pub.length;document.getElementById('statCredits').textContent=user().role==='admin'?'∞':user().credits;document.getElementById('featuredGrid').innerHTML=(pub.length?pub.slice(0,4):sampleBooks()).map(bookCard).join('')}
+function sampleBooks(){return [{id:'sample1',title:'O Reino das Estrelas',genre:'Fantasia',authorName:'LivroMágico',chapters:[{title:'A primeira luz',body:'Uma jovem encontra um mapa que brilha sob a luz das estrelas. Este livro de demonstração mostra como a leitura ficará quando houver obras publicadas.'}],sample:true},{id:'sample2',title:'Além do Horizonte',genre:'Aventura',authorName:'LivroMágico',chapters:[{title:'A partida',body:'Uma viagem inesperada muda tudo. Este é um exemplo visual do leitor do protótipo.'}],sample:true}]}
+function renderLibrary(){const mine=db.books.filter(b=>b.ownerId===currentUser);document.getElementById('myBooksGrid').innerHTML=mine.length?mine.map(bookCard).join():'<div class="panel"><h3>Sua biblioteca está vazia</h3><p class="muted">Crie seu primeiro livro para ele aparecer aqui.</p><button onclick="goCreate()">Criar livro</button></div>'}
+function renderDiscover(){const pub=db.books.filter(b=>b.published&&b.ownerId!==currentUser);document.getElementById('publicGrid').innerHTML=pub.length?pub.map(bookCard).join():'<div class="panel"><h3>A comunidade está começando</h3><p class="muted">Quando autores publicarem livros, eles aparecerão aqui. Você pode ler os exemplos na página inicial.</p></div>'}
+
+let localEngine = null;
+let localModelId = null;
+let isGeneratingBook = false;
+
+function setAiStatus(message, percent=null) {
+  const status = document.getElementById('aiStatus');
+  const progress = document.getElementById('aiProgress');
+  if (status) status.textContent = message;
+  if (progress && percent !== null) {
+    progress.style.display = 'block';
+    progress.value = Math.max(0, Math.min(100, percent));
+  }
+}
+
+async function loadLocalAI() {
+  const btn = document.getElementById('loadAiBtn');
+  if (localEngine) { setAiStatus('IA carregada: ' + localModelId, 100); return; }
+  if (!('gpu' in navigator)) {
+    setAiStatus('Este navegador não disponibiliza WebGPU. Atualize o Chrome e teste a compatibilidade.');
+    alert('WebGPU não está disponível neste navegador/aparelho. A IA local pelo navegador não pode ser iniciada aqui.');
+    return;
+  }
+  btn.disabled = true;
+  setAiStatus('Carregando biblioteca de IA...', 1);
+  try {
+    // WebLLM é entregue por CDN. O modelo é executado localmente após ser baixado.
+    const webllm = await import('https://esm.run/@mlc-ai/web-llm');
+    const list = webllm.prebuiltAppConfig.model_list || [];
+    const preferred = [
+      'Qwen2-0.5B-Instruct-q4f16_1-MLC',
+      'Qwen2-0.5B-Instruct-q0f16-MLC',
+      'Llama-3.2-1B-Instruct-q4f16_1-MLC'
+    ];
+    localModelId = preferred.find(id => list.some(m => m.model_id === id))
+      || (list.find(m => /Qwen2.*0\.5B.*Instruct/i.test(m.model_id)) || {}).model_id
+      || (list.find(m => /1B.*Instruct.*q4f16/i.test(m.model_id)) || {}).model_id;
+    if (!localModelId) throw new Error('Não encontrei um modelo pequeno compatível na lista atual do WebLLM.');
+    setAiStatus('Baixando/carregando ' + localModelId + '. A primeira vez pode demorar bastante...', 2);
+    localEngine = await webllm.CreateMLCEngine(localModelId, {
+      initProgressCallback: (p) => {
+        const pct = typeof p.progress === 'number' ? p.progress * 100 : null;
+        setAiStatus(p.text || 'Carregando modelo...', pct);
+      }
+    });
+    setAiStatus('IA pronta: ' + localModelId, 100);
+    btn.textContent = '✓ IA carregada';
+  } catch (e) {
+    localEngine = null;
+    localModelId = null;
+    setAiStatus('Não foi possível carregar: ' + (e?.message || String(e)));
+    alert('Não foi possível carregar a IA local. Confirme conexão à internet na primeira carga, navegador com WebGPU e memória disponível. Detalhe: ' + (e?.message || e));
+  } finally {
+    btn.disabled = false;
+  }
+}
+
+function saveBookState() { save(); }
+
+async function generateOneChapter(book, chapterNumber, previousSummary) {
+  const total = book.chapterCount;
+  const messages = [
+    { role: 'system', content: 'Você é um romancista profissional que escreve em português brasileiro. Escreva ficção original, coerente e envolvente. Não explique o processo nem use marcadores de resumo. Evite repetir cenas e mantenha continuidade dos personagens.' },
+    { role: 'user', content:
+      `Escreva o capítulo ${chapterNumber} de ${total} do livro "${book.title}".\n` +
+      `Gênero: ${book.genre}.\nSinopse: ${book.synopsis}\n` +
+      `Estilo: ${book.style || 'narrativa fluida, diálogos naturais, cenas concretas e emoção'}.\n` +
+      `Resumo da continuidade anterior: ${previousSummary || 'Este é o início da história; estabeleça protagonistas, mundo e conflito.'}\n` +
+      `Escreva um capítulo substancial, com título próprio, acontecimentos relevantes e um gancho narrativo. ` +
+      `Não escreva os próximos capítulos. Termine o capítulo de modo coerente com o arco geral.`
+    }
+  ];
+  const result = await localEngine.chat.completions.create({
+    messages,
+    temperature: 0.8,
+    max_tokens: 1000
+  });
+  const textOut = result.choices?.[0]?.message?.content?.trim();
+  if (!textOut) throw new Error('A IA retornou um capítulo vazio.');
+  let title = `Capítulo ${chapterNumber}`;
+  let body = textOut;
+  const lines = textOut.split('\n').map(s => s.trim()).filter(Boolean);
+  if (lines.length && (/^#+\s/.test(lines[0]) || /^cap[ií]tulo/i.test(lines[0]))) {
+    title = lines[0].replace(/^#+\s*/, '').replace(/^cap[ií]tulo\s*\d*[:.-]?\s*/i, '').trim() || title;
+    body = lines.slice(1).join('\n\n') || textOut;
+  }
+  return { title, body };
+}
+
+document.getElementById('bookForm').addEventListener('submit', async e => {
+  e.preventDefault();
+  if (isGeneratingBook) return;
+  if (!localEngine) {
+    alert('Primeiro toque em “Carregar IA gratuita” e aguarde o modelo terminar de carregar.');
+    return;
+  }
+  const u = user();
+  const cost = Number(db.settings.bookCost) || 0;
+  if (u.role !== 'admin' && u.credits < cost) {
+    alert('Você não tem créditos suficientes.');
+    return;
+  }
+  const title = document.getElementById('bookTitle').value.trim() || 'Nova história';
+  const existingBook = db.books.find(b => b.ownerId === u.id && b.title === title && !b.published && b.synopsis === document.getElementById('bookSynopsis').value.trim());
+  const book = existingBook || {
+    id: uid(), ownerId: u.id, authorName: u.name, title,
+    genre: document.getElementById('bookGenre').value,
+    chapterCount: Number(document.getElementById('bookChapters').value),
+    targetPages: Number(document.getElementById('bookLength').value),
+    synopsis: document.getElementById('bookSynopsis').value.trim(),
+    style: document.getElementById('bookStyle').value.trim(),
+    chapters: [], published: false, createdAt: new Date().toISOString()
+  };
+  if (!existingBook) {
+    if (u.role !== 'admin') u.credits -= cost;
+    db.books.unshift(book);
+  }
+  isGeneratingBook = true;
+  const submitBtn = document.querySelector('#bookForm button[type="submit"]');
+  submitBtn.disabled = true;
+  const preview = document.getElementById('generationPreview');
+  preview.classList.remove('hidden');
+  preview.innerHTML = '<div class="notice"><strong>Preparando geração...</strong><p id="bookGenProgress">Iniciando...</p><progress id="bookGenBar" value="0" max="100" style="width:100%"></progress><div id="bookGenOutput"></div></div>';
+  save(); updateHeader();
+  let previousSummary = book.chapters.length
+    ? book.chapters.slice(-2).map(c => c.title + ': ' + c.body.slice(0, 350)).join('\n')
+    : '';
+  try {
+    for (let n = book.chapters.length + 1; n <= book.chapterCount; n++) {
+      document.getElementById('bookGenProgress').textContent = `Gerando capítulo ${n} de ${book.chapterCount}... Não feche esta página.`;
+      const chapter = await generateOneChapter(book, n, previousSummary);
+      book.chapters.push(chapter);
+      previousSummary = book.chapters.slice(-2).map(c => c.title + ': ' + c.body.slice(-500)).join('\n');
+      save(); updateHeader();
+      document.getElementById('bookGenBar').value = book.chapters.length / book.chapterCount * 100;
+      document.getElementById('bookGenOutput').innerHTML = `<p class="good">✓ Capítulo ${n} salvo: ${esc(chapter.title)}</p>`;
+      document.getElementById('bookGenProgress').textContent = `Concluídos ${book.chapters.length} de ${book.chapterCount} capítulos.`;
+    }
+    document.getElementById('bookGenProgress').textContent = 'Livro gerado e salvo na sua biblioteca.';
+    document.getElementById('bookGenOutput').innerHTML += '<button id="openGeneratedLibrary">Abrir minha biblioteca</button>';
+    document.getElementById('openGeneratedLibrary').addEventListener('click', () => go('library'));
+  } catch (err) {
+    save();
+    document.getElementById('bookGenProgress').textContent = 'A geração foi interrompida. Os capítulos já concluídos foram salvos. Você pode tentar continuar depois.';
+    document.getElementById('bookGenOutput').innerHTML = `<p style="color:var(--red)">${esc(err?.message || String(err))}</p><button class="secondary" onclick="go('library')">Ver capítulos salvos</button>`;
+  } finally {
+    isGeneratingBook = false;
+    submitBtn.disabled = false;
+    updateHeader();
+  }
+});
+function bookAction(id){const b=db.books.find(x=>x.id===id);if(!b)return;const choices=[];if(b.ownerId===currentUser&&!b.published)choices.push('publicar');choices.push('baixar','cancelar');const a=prompt(`Opções para "${b.title}":\\nDigite publicar, baixar ou cancelar`);if(a==='publicar'&&b.ownerId===currentUser){b.published=true;save();alert('Livro publicado gratuitamente na comunidade. A venda paga precisa de integração de pagamentos.');go('library')}else if(a==='baixar')downloadBook(b)}
+function openReader(id){let b=db.books.find(x=>x.id===id);if(!b)b=sampleBooks().find(x=>x.id===id);if(!b)return;if(!b.sample&&b.ownerId!==currentUser&&b.published&&user().role!=='admin'){const cost=Number(db.settings.readCost)||0;if(user().credits<cost){alert('Créditos insuficientes para ler este livro.');return}user().credits-=cost;save();updateHeader()}readerBookId=id;readerIndex=0;renderReader(b);go('reader')}
+function renderReader(b){const c=b.chapters?.[readerIndex];document.getElementById('reader').innerHTML=`<h2>${esc(b.title)}</h2><h3 style="text-align:center">${esc(c?.title||('Capítulo '+(readerIndex+1)))}</h3><p>${esc(c?.body||b.synopsis||'Este livro ainda não tem capítulos gerados. A IA será integrada na próxima etapa.')}</p>`;document.getElementById('readerPageLabel').textContent=`${readerIndex+1} / ${b.chapters?.length||1}`;document.getElementById('readerChapterLabel').textContent=`Capítulo ${readerIndex+1}`}
+function readerPrev(){let b=getReaderBook();if(b&&readerIndex>0){readerIndex--;renderReader(b)}}
+function readerNext(){let b=getReaderBook();if(b&&readerIndex<(b.chapters?.length||1)-1){readerIndex++;renderReader(b)}}
+function getReaderBook(){return db.books.find(x=>x.id===readerBookId)||sampleBooks().find(x=>x.id===readerBookId)}
+function downloadCurrentBook(){const b=getReaderBook();if(b)downloadBook(b)}
+function downloadBook(b){const text=`${b.title}\\nPor ${b.authorName||'Autor'}\\n\\n${b.synopsis||''}\\n\\n`+(b.chapters||[]).map((c,i)=>`Capítulo ${i+1}: ${c.title}\\n\\n${c.body}`).join('\\n\\n');const blob=new Blob([text],{type:'text/plain;charset=utf-8'});const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download=(b.title||'livro').replace(/[^a-z0-9-_]/gi,'_')+'.txt';a.click();URL.revokeObjectURL(a.href)}
+function renderProfile(){const u=user();document.getElementById('profileInfo').textContent=`Conta: ${u.email} · Função: ${u.role==='admin'?'Administrador':'Leitor/autor'}`;document.getElementById('profileName').value=u.name}
+function saveProfile(){user().name=document.getElementById('profileName').value.trim()||user().name;save();updateHeader();renderProfile();alert('Perfil salvo.')}
+function renderAdmin(){if(user().role!=='admin'){go('home');return}document.getElementById('adminUsers').textContent=db.users.length;document.getElementById('adminBooks').textContent=db.books.length;document.getElementById('adminCredits').textContent=db.users.reduce((n,u)=>n+(u.role==='admin'?0:u.credits),0);document.getElementById('settingCredits').value=db.settings.initialCredits;document.getElementById('settingCost').value=db.settings.bookCost;document.getElementById('settingReadCost').value=db.settings.readCost;document.getElementById('usersTable').innerHTML=db.users.map(u=>`<tr><td>${esc(u.name)}<br><span class="muted">${esc(u.email)}</span></td><td>${u.role}</td><td>${u.role==='admin'?'∞':u.credits}</td><td>${u.role!=='admin'?`<button class="secondary" onclick="grantCredits('${u.id}')">+ Créditos</button> <button class="secondary" onclick="toggleUser('${u.id}')">${u.disabled?'Reativar':'Desativar'}</button> <button class="danger" onclick="deleteUser('${u.id}')">Excluir</button>`:'Conta protegida'}</td></tr>`).join('');document.getElementById('adminBooksTable').innerHTML=db.books.map(b=>`<tr><td>${esc(b.title)}</td><td>${esc(b.authorName)}</td><td>${b.published?'Publicado':'Privado'}</td><td><button class="danger" onclick="deleteBook('${b.id}')">Excluir</button></td></tr>`).join('')||'<tr><td colspan="4">Nenhum livro ainda.</td></tr>'}
+function saveSettings(){db.settings.initialCredits=Math.max(0,Number(document.getElementById('settingCredits').value)||0);db.settings.bookCost=Math.max(0,Number(document.getElementById('settingCost').value)||0);db.settings.readCost=Math.max(0,Number(document.getElementById('settingReadCost').value)||0);save();renderAdmin();alert('Configurações salvas neste navegador.')}
+function grantCredits(id){const n=Number(prompt('Quantos créditos deseja adicionar?', '5'));if(Number.isFinite(n)&&n>0){const u=db.users.find(x=>x.id===id);u.credits+=Math.floor(n);save();renderAdmin()}}
+function toggleUser(id){const u=db.users.find(x=>x.id===id);u.disabled=!u.disabled;save();renderAdmin()}
+function deleteUser(id){if(!confirm('Excluir esta conta e os livros associados?'))return;db.users=db.users.filter(x=>x.id!==id);db.books=db.books.filter(x=>x.ownerId!==id);save();renderAdmin()}
+function deleteBook(id){if(!confirm('Excluir este livro?'))return;db.books=db.books.filter(x=>x.id!==id);save();renderAdmin()}
+load();setAuthMode('login');
+</script>
+</body>
+</html>
